@@ -1,0 +1,11 @@
+{
+  "id": "focusable-no-role",
+  "evaluate": "focusable-no-role.js",
+  "metadata": {
+    "impact": "serious",
+    "messages": {
+      "pass": "Element is not in tab order or has a widget role",
+      "fail": "Element is in tab order and does not have a widget role"
+    }
+  }
+}
