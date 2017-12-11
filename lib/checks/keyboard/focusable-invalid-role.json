@@ -1,6 +1,6 @@
 {
-  "id": "focusable-no-role",
-  "evaluate": "focusable-no-role.js",
+  "id": "focusable-invalid-role",
+  "evaluate": "focusable-invalid-role.js",
   "metadata": {
     "impact": "serious",
     "messages": {
