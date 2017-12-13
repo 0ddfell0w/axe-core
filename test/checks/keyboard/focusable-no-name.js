@@ -1,4 +1,4 @@
-describe('focusable-no-name', function () {
+describe('focus-order-no-name', function () {
 	'use strict';
 
 	var fixture = document.getElementById('fixture');
@@ -12,31 +12,31 @@ describe('focusable-no-name', function () {
 	it('should pass if tabindex < 0', function () {
 		fixtureSetup('<a href="#" tabindex="-1"></a>');
 		var node = fixture.querySelector('a');
-		assert.isFalse(checks['focusable-no-name'].evaluate(node));
+		assert.isFalse(checks['focus-order-no-name'].evaluate(node));
 	});
 
 	it('should pass element is not natively focusable', function () {
 		fixtureSetup('<span role="link" href="#"></span>');
 		var node = fixture.querySelector('span');
-		assert.isFalse(checks['focusable-no-name'].evaluate(node));
+		assert.isFalse(checks['focus-order-no-name'].evaluate(node));
 	});
 
 	it('should fail if element is tabbable with no name - native', function () {
 		fixtureSetup('<a href="#"></a>');
 		var node = fixture.querySelector('a');
-		assert.isTrue(checks['focusable-no-name'].evaluate(node));
+		assert.isTrue(checks['focus-order-no-name'].evaluate(node));
 	});
 
 	it('should fail if element is tabable with no name - ARIA', function () {
 		fixtureSetup('<span tabindex="0" role="link" href="#"></spam>');
 		var node = fixture.querySelector('span');
-		assert.isTrue(checks['focusable-no-name'].evaluate(node));
+		assert.isTrue(checks['focus-order-no-name'].evaluate(node));
 	});
 
 	it('should pass if the element is tabable but has an accessible name', function () {
 		fixtureSetup('<a href="#" title="Hello"></a>');
 		var node = fixture.querySelector('a');
-		assert.isFalse(checks['focusable-no-name'].evaluate(node));
+		assert.isFalse(checks['focus-order-no-name'].evaluate(node));
 	});
 
 	(shadowSupport.v1 ? it : xit)('should pass if the content is passed in with shadow DOM', function () {
@@ -47,7 +47,7 @@ describe('focusable-no-name', function () {
 		fixtureSetup(node);
 
 		var link = shadow.querySelector('a');
-		assert.isFalse(checks['focusable-no-name'].evaluate(link));
+		assert.isFalse(checks['focus-order-no-name'].evaluate(link));
 	});
 
 });

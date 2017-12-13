@@ -1,6 +1,6 @@
 {
-  "id": "focusable-no-name",
-  "evaluate": "focusable-no-name.js",
+  "id": "focus-order-no-name",
+  "evaluate": "focus-order-no-name.js",
   "metadata": {
     "impact": "serious",
     "messages": {
